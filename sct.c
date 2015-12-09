@@ -5,7 +5,6 @@
 #include <X11/extensions/Xrandr.h>
 
 #include <stdlib.h>
-#include <math.h>
 
 
 /* cribbed from redshift, but truncated with 500K steps */
