@@ -17,3 +17,11 @@ are as follows:
 
 where `TEMPERATURE` is given between 1000K and 10000K (default 6500K)
 and `BRIGHTNESS` between 0.1 and 1.0 (default 1.0).
+
+To compile, you must specify the location of `libX11`, `libXrandr` and the required include files, e.g.,
+
+```
+gcc -I/usr/local/include -L/usr/local/lib -lXrandr -lX11 sct.c -o sct
+```
+
+or adapt it to your OS.
