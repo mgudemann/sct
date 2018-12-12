@@ -21,7 +21,7 @@ and `BRIGHTNESS` between 0.1 and 1.0 (default 1.0).
 To compile, you must specify the location of `libX11`, `libXrandr` and the required include files, e.g.,
 
 ```
-gcc -I/usr/local/include -L/usr/local/lib -lXrandr -lX11 sct.c -o sct
+gcc -I/usr/local/include -L/usr/local/lib sct.c -o sct -lXrandr -lX11
 ```
 
 or adapt it to your OS.
