@@ -6,6 +6,8 @@
 
 #include <stdlib.h>
 
+#define MAXIMAL_BRIGHTNESS 1.0
+#define MINIMAL_BRIGHTNESS 0.0
 
 /* cribbed from redshift, but truncated with 500K steps */
 static const struct { float r; float g; float b; } whitepoints[] = {
@@ -49,8 +51,13 @@ main(int argc, char **argv)
         double brightness = 1.0;
         if (argc > 2)
                 brightness = atof(argv[2]);
-        if (brightness < 0.1 || brightness > 1.0)
-                brightness = 1.0;
+
+        /* set a minimal an maximal brightness, default is [0.0,1.0] */
+        if (brightness < MINIMAL_BRIGHTNESS)
+          brightness = MINIMAL_BRIGHTNESS;
+
+        if (brightness > MAXIMAL_BRIGHTNESS)
+          brightness = MAXIMAL_BRIGHTNESS;
 
 	temp -= 1000;
 	double ratio = temp % 500 / 500.0;
