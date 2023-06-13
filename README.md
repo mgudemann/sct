@@ -25,3 +25,6 @@ gcc -I/usr/local/include -L/usr/local/lib sct.c -o sct -lXrandr -lX11
 ```
 
 or adapt it to your OS.
+
+On Devuan (and probably other Debian derived distributions) you will need to
+install the additional packages `libxrandr-dev` and `libc6-dev`.
